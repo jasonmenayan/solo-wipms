@@ -1,1 +1,7 @@
-<p>This is the store view.</p>
+<div class="jumbotron">
+  <h2>What are you storing?</h2>
+</div>
+<form name="itemLocStorage" ng-controller="StoreCtrl as store" ng-submit="store.addItemName(item)">
+	<input type="text" name="item" ng-model="item" required novalidate class="form-control input-lg">
+	<input type="submit" value="Submit" class="btn btn-primary btn-block">
+</form>

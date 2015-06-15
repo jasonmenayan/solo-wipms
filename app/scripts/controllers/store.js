@@ -9,9 +9,11 @@
  */
 angular.module('wipmsApp')
   .controller('StoreCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  	$scope.item 
   });
+
+
+
+// form validation
+// use this regex: /^[\w\- ]+$/
+// accepts alphanumerics dash and space only
