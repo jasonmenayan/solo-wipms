@@ -11,48 +11,51 @@ store.js
  */
 angular.module('wipmsApp', ['ngStorage'])
   .controller('StoreCtrl', function ($scope, $location, $localStorage) {
+
+  	$scope.items = {};
  
-  	$scope.locTree = {
-  			'01-01-00': 'Bedroom',
-  			'01-02-00': 'Living room',
-  			'01-03-00': 'Home office',
-  			'01-04-00': 'Kitchen',
-  			'01-05-00': 'Bathroom',
-  			'01-06-00': 'Guest bedroom',
-  			'01-07-00': 'Basement',
-  			'01-01-01': 'Closet',
-  			'01-01-02': 'Under bed',
-  			'01-02-01': 'Entertainment center',
-  			'01-02-02': 'Hall closet',
-  			'01-02-03': 'Mantle',
-  			'01-03-01': 'Filing cabinet',
-  			'01-03-02': 'Closet',
-  			'01-03-03': 'Archive bin',
-  			'01-03-04': 'Cabinets'
-  			'01-04-01': 'Spice cabinet',
-  			'01-04-02': 'Pantry',
-  			'01-04-03': 'Top of refrigerator',
-  			'01-05-01': 'Medicine cabinet',
-  			'01-06-01': 'Short chest of drawers',
-  			'01-06-02': 'Tall chest of drawers',
-  			'01-06-03': 'Closet',
-  			'01-07-01': 'Under stairs',
-  			'01-07-02': 'Box storage'
+  	var locTree: {
+  			'Bedroom': null,
+  			'Living room': null,
+  			'Home office': null,
+  			'Kitchen': null,
+  			'Bathroom': null,
+  			'Guest bedroom': null,
+  			'Basement': null,
+  			'Bedroom: Closet': null,
+  			'Bedroom: Under bed': null,
+  			'Living room: Entertainment center': null,
+  			'Living room: Hall closet': null,
+  			'Living room: Mantle': null,
+  			'Home office: Filing cabinet': null,
+  			'Home office: Closet': null,
+  			'Home office: Archive bin': null,
+  			'Home office: Cabinets': null,
+  			'Kitchen: Spice cabinet': null,
+  			'Kitchen: Pantry': null,
+  			'Kitchen: Top of refrigerator': null,
+  			'Bathroom: Medicine cabinet': null,
+  			'Guest bedroom: Short chest of drawers': null,
+  			'Guest bedroom: Tall chest of drawers': null,
+  			'Guest bedroom: Closet': null,
+  			'Basement: Under stairs': null,
+  			'Basement: Box storage': null
   	};
 
-  	$scope.addItemName = function(item) {
-  		$scope.item.name = item;
-  		$scope.item.date = Date.now();
+  	$scope.createItem = function(name) {
+  		$scope.item.itemName = name;
+  		$scope.item.timestamp = Date.now();
   		$location.path('/locDrilldown');
   	};
-  	
-  	$scope.locBuilder = '';
 
-  	$scope.newLoc = function(level, levelLoc) {
-  		// add a new location based on user input 
-
+  	$scope.renderLocations = function() {
+  		// on the /locDrilldown view, renders list of locTree locations which user can select one location by clicking on it
   	};
 
+  	$scope.addLocToItem = function(location) {
+  		$scope.item.location = location;
+  		$location.path('/locStored');
+  	};
 
 
   });

@@ -31,6 +31,14 @@ angular
         templateUrl: 'views/retrieve.html',
         controller: 'RetrieveCtrl'
       })
+      .when('/locDrilldown', {
+        templateUrl: 'views/locDrilldown.html',
+        controller: 'StoreCtrl'
+      })
+      .when('/locStored', {
+        templateUrl: 'views/locStored.html',
+        controller: 'StoreCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
